@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="number">
+    <button>Submit</button>
+    <div class="out" style="text-align: center;"></div>
+    <script>
+
+        let sum = 0;
+        let i = 0;
+        while (i <= 10) {
+
+            sum = sum + i;
+            i++
+        }
+
+        console.log(sum);
+
+
+
+
+
+        
+
+        let inputNumber = document.querySelector('input');
+        let button = document.querySelector('button');
+        button.addEventListener('click', eventHandler);
+
+        function eventHandler() {
+            paint(inputNumber.value)
+
+        }
+
+        function paint(starsNum) {
+            let p = 0;
+            let str = '';
+            let flag = starsNum - 1;
+            let out = document.querySelector('.out');
+            while (p < starsNum) {
+                let p1 = 0;
+                while (p1 < starsNum) {
+                    if (p1 < flag) {
+                        str += ' ';
+                    }
+                    else {
+                        str += '*';
+                    }
+
+                    p1++;
+                }
+                flag--;
+                str += '<br>';
+                p++;
+            }
+            out.innerHTML = str;
+        }
+
+    </script>
+</body>
+
+</html>

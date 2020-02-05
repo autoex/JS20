@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input type="text">
+    <input type="button" value="Ok" class="ok">
+    <input type="button" value="Delete" class="delete">
+
+    <script>
+        let input = document.querySelector('input[type="text"]');
+        let ok = document.querySelector('.ok');
+        let deleteButt = document.querySelector('.delete');
+        ok.onclick = function () {
+            a.add(+input.value);
+
+            console.log(a);
+            input.value = '';
+
+        }
+
+        deleteButt.onclick = function () {
+            if (input.value == '') {
+                alert('Error')
+            }
+            else {
+                a.delete(+input.value);
+                console.log(a);
+                input.value = '';
+            }
+        }
+
+        let a = new Set();
+        a.add(1);
+        a.add(2);
+        a.add(3);
+
+        console.log(a);
+        console.log(a.size);
+
+
+
+
+    </script>
+</body>
+
+</html>

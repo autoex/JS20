@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .two {
+        background: orchid!important;
+    }
+    .border {
+        border: 2px solid orange;
+    }
+    </style>
+</head>
+
+<body>
+    <button data="switch">Toggle</button>
+    <p class="one">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, totam facilis! Provident voluptatum eius eligendi repellat, quidem voluptatibus odio vel facilis consectetur mollitia velit numquam perspiciatis quam magnam aliquam optio.</p>
+
+    <script>
+        let one = document.querySelector('.one');
+        let button = document.querySelector('button');
+        one.style.background = 'green';
+        one.addEventListener('click', addClass);
+        
+        function addClass () {
+            one.classList.add('two');
+        }
+
+        button.onclick = function () {
+            this.classList.toggle('border');
+           console.log(this.getAttribute('data'));
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

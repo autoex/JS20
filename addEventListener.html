@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 onclick="console.log('Hi')">Hello Bro!!</h1>
+    <h2>H2 title</h2>
+    <h3>H3 title</h3>
+    <h4>h4 title</h4>
+    <script>
+    let h2 = document.querySelector('h2');
+    let h3 = document.querySelector('h3');
+    let h4 = document.querySelector('h4');
+    h2.onclick = func1;
+    h3.onclick = function () {
+        func2();
+    }
+
+    function func1 () {
+        console.log('H2 click');
+    }
+
+    function func2 () {
+        console.log('H3 click');
+    }
+    h4.addEventListener('click', func1);
+    h4.addEventListener('click', func2);
+    </script>
+</body>
+
+</html>

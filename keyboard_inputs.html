@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <input type="text" name="" id="" value="">
+    </div>
+    <script>
+
+        document.querySelector('input').onkeypress = function (event) {
+            const a = {
+                q: 'w',
+                w: 'e'
+            }
+            document.querySelector('input').value += a[event.key];
+
+            return false;
+
+        }
+
+
+
+    </script>
+</body>
+
+</html>

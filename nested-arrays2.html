@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>----------Task 1----------</div>
+    <div class="out"></div>
+    <div>----------Task 2----------</div>
+    <div class="out2"></div>
+    <div>----------Task 3----------</div>
+    <div class="out3"></div>
+    <div>----------Task 4----------</div>
+    <div class="out4"></div>
+    <div>----------Task 5----------</div>
+    <div class="out5"></div>
+    <div>----------Task 6----------</div>
+    <div class="out6"></div>
+    <div>----------Task 7----------</div>
+    <div class="out7"></div>
+    <div>----------Task 8----------</div>
+    <div class="out8"></div>
+    <div>----------Task 9----------</div>
+    <div class="out9"></div>
+
+
+    <script>
+
+        //Task 1
+
+        let out = document.querySelector('.out');
+
+        for (let i = 0; i < 3; i++) {
+
+            for (let k = 0; k < 3; k++) {
+
+                out.innerHTML += '*';
+
+            }
+
+            out.innerHTML += ' ';
+
+        }
+        //Task 1 End
+
+
+        //Task 2
+
+        let out2 = document.querySelector('.out2');
+
+        for (let i = 0; i < 3; i++) {
+
+            for (let k = 0; k < 5; k++) {
+                out2.innerHTML += '*';
+
+            }
+
+            out2.innerHTML += '<br>';
+
+        }
+
+        //Task 2 End
+
+        //Task 3
+
+        let out3 = document.querySelector('.out3');
+        for (let i = 0; i < 3; i++) {
+
+            for (let k = 0; k < 6; k++) {
+                if (k % 2 === 0) {
+                    out3.innerHTML += 1;
+                }
+                else {
+                    out3.innerHTML += 0;
+                }
+
+            }
+
+            out3.innerHTML += '<br>';
+
+        }
+
+        //Task 3 End
+
+        //Task 4
+
+        let out4 = document.querySelector('.out4');
+        for (let i = 0; i < 3; i++) {
+
+            for (let k = 1; k < 7; k++) {
+
+
+
+                if (k % 3 === 0) {
+                    out4.innerHTML += 'x';
+                    //console.log(k)
+
+
+                }
+
+                else if (k % 2 === 0) {
+                    out4.innerHTML += 1;
+                }
+
+
+                else {
+                    out4.innerHTML += 0;
+                }
+
+            }
+
+            out4.innerHTML += '<br>';
+
+        }
+
+        //Task 4 End
+
+
+        //Task 5
+
+        let out5 = document.querySelector('.out5');
+        let cycleMax = 3;
+        let flag = cycleMax - 1;
+        for (let i = 1; i <= cycleMax; i++) {
+
+            for (let k = 1; k <= cycleMax; k++) {
+
+                if (k <= flag) {
+                    out5.innerHTML += ' ';
+
+                }
+                else {
+
+
+                    out5.innerHTML += '*';
+                }
+
+            }
+            flag--
+            out5.innerHTML += '<br>';
+
+        }
+
+
+        //Task 5 End
+
+
+        //Task 6
+
+        let out6 = document.querySelector('.out6');
+        let cycleMax1 = 6;
+        let flag1 = cycleMax1 - 1;
+        for (let i = cycleMax1; i > 0; i--) {
+
+            for (let k = cycleMax1; k > 0; k--) {
+
+                if (k <= flag1) {
+                    out6.innerHTML += '*';
+
+                }
+                else {
+
+
+                    out6.innerHTML += ' ';
+                }
+
+            }
+            flag1--
+            out6.innerHTML += '<br>';
+
+        }
+
+
+        //Task 6 End
+
+
+        //Task 7
+
+        let out7 = document.querySelector('.out7');
+        let q = 2;
+        let q1 = 6;
+
+        for (let i = 0; i < 3; i++) {
+
+            for (let k = 0; k < 7; k++) {
+
+                if (k < q || k > q1) {
+                    out7.innerHTML += '&nbsp;';
+                }
+
+
+                else {
+
+                    out7.innerHTML += '*';
+                }
+
+            }
+            q--;
+            q1--;
+            out7.innerHTML += '<br>';
+
+        }
+
+        //Task 7 End
+
+        //Task 8
+
+        let out8 = document.querySelector('.out8');
+        let cycleMax8 = 3;
+        let flag8 = 2;
+        for (let i = 1; i <= 3; i++) {
+
+            for (let k = 1; k <= 3; k++) {
+
+                if (k <= flag8) {
+                    out5.innerHTML += ' ';
+
+                }
+                else {
+
+
+                    out8.innerHTML += '*';
+                }
+
+            }
+            flag8--
+            out8.innerHTML += '<br>';
+
+        }
+
+
+        //Task 8 End
+
+        //Task 9 
+        let out9 = document.querySelector('.out9');
+        let num = 5;
+
+        for (let i = 0; i < num; i++) {
+
+
+            if (i === 0 || i === num - 1) {
+                for (let k = 0; k < 6; k++) {
+
+                    out9.innerHTML += '*';
+
+                }
+            }
+
+            else {
+                for (let k = 0; k < 6; k++) {
+                    if (k === 0 || k === 5) {
+                        out9.innerHTML += '*';
+
+                    }
+
+                    else { out9.innerHTML += '&nbsp;&nbsp;'; }
+
+                }
+            }
+
+            out9.innerHTML += '<br>';
+
+        }
+
+
+        //Task 9 End
+
+
+
+
+    </script>
+</body>
+
+</html>

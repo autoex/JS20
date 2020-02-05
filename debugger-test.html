@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="out"></div>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima facilis laboriosam qui, dignissimos nihil
+        accusamus dolore, nulla eligendi non nobis fugit deserunt dolor asperiores aliquam earum laudantium quia,
+        officia iusto.</p>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima facilis laboriosam qui, dignissimos nihil
+        accusamus dolore, nulla eligendi non nobis fugit deserunt dolor asperiores aliquam earum laudantium quia,
+        officia iusto.</p>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima facilis laboriosam qui, dignissimos nihil
+        accusamus dolore, nulla eligendi non nobis fugit deserunt dolor asperiores aliquam earum laudantium quia,
+        officia iusto.</p>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima facilis laboriosam qui, dignissimos nihil
+        accusamus dolore, nulla eligendi non nobis fugit deserunt dolor asperiores aliquam earum laudantium quia,
+        officia iusto.</p>
+    <script>
+
+        let paragraphList = document.getElementsByTagName('p');
+        for (let i = 0; i < paragraphList.length; i++) {
+            if (!(i % 2 === 1)) {
+                paragraphList[i].style.color = 'red';
+            }
+
+            else {
+                paragraphList[i].style.color = 'green';
+                paragraphList[i].classList = 'green';
+                paragraphList[i].onclick = function () {
+                    alert('helo!!');
+                }
+
+            }
+
+
+        };
+
+
+
+        let tempC = [1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 13, 111, 23, 453, 56];
+        let CA = 0;
+
+        for (let j = 0; j < tempC.length; j++) {
+            CA += tempC[j];
+
+        };
+
+        console.log(CA/tempC.length)
+
+
+    </script>
+</body>
+
+</html>

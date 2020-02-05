@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>Ok</button>
+    <div class="out"></div>
+    <script>
+        let button = document.querySelector('button');
+        let out = document.querySelector('.out');
+        button.addEventListener('click', cycle)
+        function cycle() {
+            for (let index = 0; index < 11; index++) {
+                out.innerHTML += index + '_' + (10 - index) + '_ ';
+                /* for (let i = 10; i >= 0; i--) {
+                    out.innerHTML += i + '_';
+
+                } */
+
+
+
+            }
+        }
+    </script>
+</body>
+
+</html>

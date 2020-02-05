@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="out"></div>
+    <script>
+        let out = document.querySelector('.out');
+        a4 = {
+            3: 'hello',
+            'one': 'hi',
+            'testt': 'vodoley',
+            'ivan': 'ivanov'
+        };
+
+
+        for (let key in a4) {
+
+            if (key.length > 4) {
+                out.innerHTML += key + ' : ' + a4[key] + '<br>';
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>

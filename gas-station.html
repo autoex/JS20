@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .yellow {
+            background: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="number">
+    <hr>
+    <button data-price="2">A 92</button>
+    <button data-price="4">A 95</button>
+    <button data-price="8">A 98</button>
+    <hr>
+    <div class="out"></div>
+
+    <hr>
+    <p class="u3">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis voluptatum, repellat ipsa possimus
+        nisi explicabo quae nesciunt unde mollitia dignissimos, odio culpa minus autem quaerat a dolore et, ratione
+        tempora.</p>
+    <p class="u3">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis voluptatum, repellat ipsa possimus
+        nisi explicabo quae nesciunt unde mollitia dignissimos, odio culpa minus autem quaerat a dolore et, ratione
+        tempora.</p>
+    <p class="u3">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis voluptatum, repellat ipsa possimus
+        nisi explicabo quae nesciunt unde mollitia dignissimos, odio culpa minus autem quaerat a dolore et, ratione
+        tempora.</p>
+    <p class="u-1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita consequatur veritatis officia
+        aliquid dignissimos numquam incidunt aspernatur consequuntur doloremque perferendis. Ad voluptates voluptatum
+        molestiae consequuntur aliquam ipsam mollitia aperiam labore.</p>
+    <script>
+
+        let button = document.querySelectorAll('button');
+        let u3 = document.querySelectorAll('.u3');
+        let out = document.querySelector('.out');
+        
+
+
+        for (let i = 0; i < button.length; i++) {
+            button[i].onclick = function () {
+                let gallons = document.querySelector('input').value;
+                let amount = this.getAttribute('data-price');
+
+                out.innerHTML = gallons * amount;
+                return gallons * amount;
+            }
+
+        }
+
+
+
+
+        function mult(a, b) {
+            return a * b;
+        }
+
+        console.log(mult(2, 3))
+
+
+        for (let k = 0; k < u3.length; k++) {
+            u3[k].onclick = function () {
+                this.classList.toggle('yellow');
+            }
+
+        }
+
+        function func_1 () {
+            let u1 = document.querySelector('.u-1');
+            u1.style.width = '200px';
+            u1.style.height = '240px';
+
+
+        }
+
+        func_1();
+
+    </script>
+</body>
+
+</html>

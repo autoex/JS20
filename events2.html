@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            border: 1px solid #333;
+            padding: 20px;
+            margin: 50px;
+
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="one">One</div>
+
+    <div class="three">Three
+        <div class="two">Two</div>
+
+    </div>
+
+    <script>
+        /* let one = document.querySelector('#one');
+        one.onclick = click;
+
+        function click(a) { 
+            console.log('One click!'); 
+            console.log(a.target);
+            console.log(a.srcElement);
+            } */
+        /*  document.onclick = function (event) {
+             console.log(event.target);
+             if (event.target.id === 'one') {
+                 console.log('You have clicked on "one" - box')
+             }
+         } */
+
+        let two = document.querySelector('.two');
+        let three = document.querySelector('.three');
+        two.onclick = function (event) {
+            console.log(this);
+            event.stopPropagation();
+        }
+
+        three.onclick = function () {
+            console.log(this)
+        }
+    </script>
+</body>
+
+</html>

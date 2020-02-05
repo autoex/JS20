@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" pattern="\d [0-9]">
+    <hr>
+    <button>Get answer</button>
+    <hr>
+    <div class="out"></div>
+
+    <script>
+        /* Set DOM elements */
+        let inputBrackets = document.querySelector('input');
+        let button = document.querySelector('button');
+        let out = document.querySelector('.out');
+        /* ------------------ */
+
+
+        /* Styles and value for input */
+        inputBrackets.setAttribute('style', 'color: #999; width:250px');
+        inputBrackets.value = 'Input few brackets like "(())"';
+        function changeInputStyles() {
+            this.value = null;
+            this.style.color = '#000';
+        }
+        /* ------------------ */
+
+
+
+        /* Add listeners */
+        inputBrackets.addEventListener('click', changeInputStyles);
+       
+        button.addEventListener('click', calculateBrackets);
+        /* ------------------ */
+
+       
+
+        function calculateBrackets() {
+            let brackets;
+            brackets = inputBrackets.value;
+
+            let count = 0;
+
+            for (let i = 0; i < brackets.length; i++) {
+
+                if (brackets[i] === ')') count--;
+                if (brackets[i] === '(') count++;
+                if (count < 0) break;
+
+
+            }
+
+            if (count < 0) {
+                out.innerHTML = 'Wrong';
+
+
+
+            }
+            else if (count === 0) {
+                out.innerHTML = 'Correct';
+            }
+
+            else {
+                out.innerHTML = 'Wrong';
+
+            }
+
+
+        }
+
+
+
+
+
+    </script>
+</body>
+
+</html>
