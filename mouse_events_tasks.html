@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            padding: 2px;
+        }
+
+        .out {
+            border: solid 1px red;
+            display: none;
+
+            margin: 2px;
+        }
+
+        .div-3,
+        .div-16 {
+            width: 150px;
+            border: solid 1px greenyellow;
+        }
+
+        .active {
+            background-color: indianred;
+        }
+
+        .hide {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div-1">Task 1</div>
+    <div class="out out-1"></div>
+    <div class="div-2">Task 2</div>
+    <div class="out out-2"></div>
+    <div class="div-3">Task 3</div>
+    <div class="out out-3"></div>
+    <div class="div-4">Task 4</div>
+    <div class="out out-4"></div>
+    <div class="div-5 active">Task 5</div>
+    <div class="div-6">Task 6</div>
+    <ul class="ul-6">
+        <li>One</li>
+        <li>Two</li>
+        <li>Three</li>
+    </ul>
+    <div class="div-7">Task 7</div>
+    <div class="div-8">Context menu <strong>on/of</strong> <br>
+        <input type="checkbox" class="ch-8">
+    </div>
+    <div class="div-9"><img src="img/png1.png" alt=""></div>
+    <div class="div-10"><img src="img/png1.png" alt=""></div>
+    <div class="div-12">Task 12</div>
+    <button class="btn-14">Task 14</button>
+    <div class="div-14">Task 14</div>
+    <div class="div-14">Task 14</div>
+    <div class="div-15">0</div>
+    <div class="div-15">0</div>
+    <div class="div-16">Task 16</div>
+
+    <button class="b-17_on">On</button>
+    <button class="b-17_off">Off</button>
+
+    <div class="div-18">Task 18</div>
+    <div class="div-19">Task 19</div>
+    <progress value="10" max="100"></progress>
+
+    <script>
+
+        //    Task1
+        let div1 = document.querySelector('.div-1');
+        let out1 = document.querySelector('.out-1');
+
+        function t1() {
+            out1.style.display = 'block';
+
+            return out1.innerHTML = div1.innerHTML;
+
+        }
+        div1.onclick = t1;
+
+
+
+        //    Task2
+        let div2 = document.querySelector('.div-2');
+        let out2 = document.querySelector('.out-2');
+
+        function t2(e) {
+            out2.style.display = 'block';
+            if (e.altKey == true) {
+                out2.innerHTML = 'True'
+            }
+
+            else {
+                out2.innerHTML = 'False'
+            }
+
+        }
+        div2.onclick = t2;
+
+
+        //    Task3
+        let div3 = document.querySelector('.div-3');
+        let out3 = document.querySelector('.out-3');
+        let w = 150
+
+        function t3(e) {
+            out3.style.display = 'block';
+            div3.style.width = w + 'px';
+            out3.innerHTML = w + 'px';
+            w += 5;
+
+
+        }
+        div3.onclick = t3;
+
+        //    Task4
+        let div4 = document.querySelector('.div-4');
+        let out4 = document.querySelector('.out-4');
+
+        function t4() {
+            out4.style.display = 'block';
+
+            return out4.innerHTML = div4.innerHTML;
+
+        }
+        div4.ondblclick = t4;
+
+        //    Task5
+        let div5 = document.querySelector('.div-5');
+
+        function t5() {
+            this.classList.toggle('active');
+
+        }
+        div5.onclick = t5;
+
+        //    Task6
+        let div6 = document.querySelector('.div-6');
+        let ul6 = document.querySelector('.ul-6');
+
+
+        div6.ondblclick = function () {
+
+            ul6.classList.toggle('hide');
+        }
+
+        //    Task7
+        let div7 = document.querySelector('.div-7');
+        div7.oncontextmenu = function () {
+
+            this.classList.toggle('active');
+            return false;
+
+        }
+
+        //    Task8
+
+        let ch8 = document.querySelector('.ch-8');
+
+        ch8.onchange = function (e) {
+
+            if (ch8.checked == true) {
+                document.oncontextmenu = function () {
+                    return false;
+                }
+            }
+            else {
+                document.oncontextmenu = function () {
+
+                }
+
+            }
+        }
+
+        //Task 9 
+
+        let div9 = document.querySelector('.div-9');
+        div9.oncontextmenu = function (e) {
+
+            this.children[0].src = 'img/png2.png';
+
+        }
+
+        //Task 10 & Task 11
+
+        let div10 = document.querySelector('.div-10');
+        div10.onmouseenter = function (e) {
+
+            this.children[0].src = 'img/png2.png';
+
+        }
+        div10.onmouseleave = function (e) {
+
+            this.children[0].src = 'img/png1.png';
+
+        }
+
+        //Task 12 & Task 13
+
+        let div12 = document.querySelector('.div-12');
+        div12.onmousedown = function () {
+            this.classList.toggle('active');
+        }
+
+        div12.onmouseup = function () {
+            this.classList.remove('active');
+        }
+
+        //Task 14
+
+        let div14 = document.querySelector('.div-14');
+        let btn14 = document.querySelector('.btn-14');
+
+        btn14.onclick = function () {
+            div14.classList.toggle('active');
+        }
+        //Task 15
+
+        let div15 = document.querySelector('.div-15');
+        let div15I = 0;
+
+
+        div15.onmousemove = function () {
+            div15.innerHTML = div15I;
+            div15I++
+
+
+        }
+
+        //Task 16
+
+        let div16 = document.querySelector('.div-16');
+        let div16I = 150;
+
+
+        function div16Listener() {
+            div16.style.width = div16I + 'px';
+            div16I += 1;
+
+
+        }
+
+        div16.addEventListener('mousemove', div16Listener)
+
+        //Task 17
+
+        let btn17On = document.querySelector('.b-17_on');
+        let btn17Off = document.querySelector('.b-17_off');
+
+        btn17Off.onclick = function () {
+            div16.removeEventListener('mousemove', div16Listener);
+
+
+        }
+        btn17On.onclick = function () {
+            div16.addEventListener('mousemove', div16Listener);
+
+
+        }
+
+        //Task 18
+
+        let div18 = document.querySelector('.div-18');
+
+        div18.onmouseenter = function t18() {
+
+
+            div18.innerHTML = 'Width:' + div18.clientWidth;
+        }
+        //Task 19
+
+        let div19 = document.querySelector('.div-19');
+
+        div19.onmouseout = function t19() {
+
+
+            div19.innerHTML = div19.classList;
+        }
+
+
+        //Task 20
+        let progress = document.querySelector('progress');
+        let progressVal = 10;
+        progress.onmousemove = function t20() {
+
+            progress.value = progressVal;
+            progressVal++
+        }
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
