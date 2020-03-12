@@ -10,20 +10,86 @@
 
 <body>
     <div>
-        <input type="text" name="" id="" value="">
+        <input type="text" name="" id="" value="" class="i-1">
+        <hr>
+        <input type="checkbox" class="ch1" checked>
+        <hr>
+        <input type="text" name="" id="" value="" class="i-2">
+
     </div>
     <script>
-
-        document.querySelector('input').onkeypress = function (event) {
-            const a = {
-                q: 'w',
-                w: 'e'
+        let i1 = document.querySelector('.i-1');
+        let i2 = document.querySelector('.i-2');
+        let ch1 = document.querySelector('.ch1');
+        i1.onkeypress = function (e) {
+            console.log('keypress')
+            console.log(e.key);
+            console.log(e.code);
+            console.log(e.charCode);
+            console.log(e);
+            if (e.shiftKey == true) {
+                alert(1)
             }
-            document.querySelector('input').value += a[event.key];
+            if (e.charCode > 47 && e.charCode < 58) {
+                // console.log('This is number: ' + e.key);
+                return false;
+            }
+        }
+
+        i1.onkeydown = function (e) {
+            console.log('keydown');
+            console.log(e.key);
+            console.log(e.code);
+            console.log(e.charCode);
+            console.log(e);
+            if (e.shiftKey == true) {
+                alert(1)
+            }
+            if (e.charCode > 47 && e.charCode < 58) {
+                // console.log('This is number: ' + e.key);
+                return false;
+            }
+        }
+
+        document.onkeydown = function (e) {
+
+            if (e.key == 'CapsLock') {
+                ch1.checked = true;
+
+            }
+
+            else {
+                ch1.checked = false;
+
+            }
+
+        }
+
+        i1.onkeyup = function (e) {
+            console.log('keyup');
+            console.log(e.key);
+            console.log(e.code);
+            console.log(e.charCode);
+            console.log(e);
+
+        }
+
+
+        i2.onkeypress = function (e) {
+
+
+            const a = {
+                q: "w",
+                w: "e"
+            }
+                i2.value += a[e.key];
+           
 
             return false;
 
         }
+
+
 
 
 

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: seagreen;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrapper {
+            width: 600px;
+            margin: auto;
+            position: relative;
+            background-color: salmon;
+            margin: 40px auto 0;
+        }
+
+        .redBox {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="redBox"></div>
+    </div>
+    <script>
+
+        /* function rec (a) {
+            
+            console.log(a);
+            a = a+5;
+            if (a>100) return a;
+            rec(a);
+        }
+        rec(0); */
+
+
+
+        let redBox = document.querySelector('.redBox');
+        let positionX = 0;
+        let positionY = 0;
+
+        function moveRight() {
+            positionX += 15;
+            redBox.style.left = positionX + 'px';
+
+            if (positionX > 600) {
+                moveBottom();
+                return false;
+            }
+
+            setTimeout(moveRight, 40);
+        }
+
+
+
+        function moveBottom() {
+            positionY += 15;
+            redBox.style.top = positionY + 'px';
+
+            if (positionY > 300) {
+                moveLeft();
+                return false;
+            }
+
+            setTimeout(moveBottom, 40);
+        }
+
+        function moveLeft() {
+            positionX -= 15;
+            redBox.style.left = positionX + 'px';
+
+            if (positionX == 0) {
+                moveTop();
+                return false;
+            }
+
+            setTimeout(moveLeft, 40);
+        }
+
+        function moveTop() {
+            positionY -= 15;
+            redBox.style.top = positionY + 'px';
+
+            if (positionY == 0) {
+                moveRight();
+                return false;
+            }
+
+            setTimeout(moveTop, 40);
+
+        }
+
+
+        redBox.addEventListener('click', moveRight);
+
+        let colors = {
+            color1: '#FF6347',
+            color2: '#FF4500',
+            color3: '#FFD700',
+            color4: '#FFA500'
+        }
+        function colorRecursion() {
+            for (let key in colors) {
+                console.log(key)
+            }
+           // colorRecursion()
+        }
+
+        function bodyColor() {
+            document.body.style.backgroundColor = colors.color1;
+        }
+
+        setInterval(bodyColor, 2000)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .hide {
+            display: none;
+        }
+    </style>
+
+</head>
+
+
+
+
+<body>
+
+    <h1>Inputs</h1>
+    <div class="first">
+        <input type="text">
+        <button>Ok</button>
+        <div class="out hide"></div>
+    </div>
+    <hr>
+    <div class="second">
+        <input type="color">
+        <button>Ok</button>
+        <div class="out hide"></div>
+    </div>
+    <hr>
+    <div class="three">
+        <input type="date">
+        <button>Ok</button>
+        <div class="out hide"></div>
+    </div>
+    <hr>
+    <div class="four">
+        <select name="" id="">
+            <option value="1">one</option>
+            <option value="2">two</option>
+            <option value="3">three</option>
+        </select>
+        <button>Ok</button>
+        <div class="out hide"></div>
+    </div>
+    <hr>
+    <label for=""><input type="checkbox" class="ch-1"> checkbox</label>
+
+    <hr>
+
+    <label for=""><input type="radio" name="1" value="1"> Option 1</label>
+    <label for=""><input type="radio" name="1" value="2"> Option 2</label>
+    <label for=""><input type="radio" name="1" value="3"> Option 3</label>
+    <button class="radioButt">Radio</button>
+
+    <script>
+
+        let input1 = document.querySelector('.first input');
+        let out1 = document.querySelector('.first .out');
+        let button1 = document.querySelector('.first button');
+
+        button1.onclick = () => {
+            if (input1.value != '') {
+                out1.classList.remove('hide');
+                out1.textContent = input1.value;
+            }
+        }
+
+
+        let input2 = document.querySelector('.second input');
+        let out2 = document.querySelector('.second .out');
+        let button2 = document.querySelector('.second button');
+
+        button2.onclick = () => {
+            if (input2.value != '') {
+                out2.classList.remove('hide');
+                out2.textContent = input2.value;
+                button2.style.background = input2.value;
+            }
+        }
+
+        let input3 = document.querySelector('.three input');
+        let out3 = document.querySelector('.three .out');
+        let button3 = document.querySelector('.three button');
+
+        button3.onclick = () => {
+            if (input3.value != '') {
+                out3.classList.remove('hide');
+                out3.textContent = input3.value;
+            }
+        }
+
+        let input4 = document.querySelector('.four select');
+        let out4 = document.querySelector('.four .out');
+        let button4 = document.querySelector('.four button');
+
+        input4.onchange = () => {
+            if (input4.value != '') {
+                out4.classList.remove('hide');
+                out4.textContent = input4.value;
+            }
+        }
+
+        let ch1 = document.querySelector('.ch-1');
+
+        ch1.onchange = () => {
+            if (ch1.checked == true) {
+                console.log('Check')
+            }
+            else {
+                console.log('Un check')
+            }
+
+        }
+
+        let radio = document.querySelectorAll('input[name="1"]');
+        let radioButt = document.querySelector('.radioButt');
+
+        radioButt.onclick = () => {
+            console.log(1)
+            for (let i = 0; i < radio.length; i++) {
+                if (radio[i].checked) {
+                    console.log(radio[i].value);
+                    break;
+                }
+
+            }
+        };
+        radioButt.onclick = () => {
+            let b = map()
+        };
+
+    </script>
+</body>
+
+</html>

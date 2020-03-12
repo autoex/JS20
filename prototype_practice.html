@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        const person = new Object(
+            {
+                age: 25,
+                name: 'Mike',
+                sex: 'male'
+            }
+        );
+
+        console.log(person)
+
+
+        const person2 = {
+            age: 15,
+            name: 'Jane',
+            sex: 'female'
+        }
+
+        function Person () {
+            age = null;
+            name = null;
+            sex = null;
+
+        }
+        
+        const person3 = new Person();
+
+        person3.age = 34;
+        person3.name = 'Ivan';
+        person3.sex = 'male'
+
+        console.log(person3);
+        Person.prototype.sayHi = function () {
+            console.log('Hello')
+        }
+    </script>
+</body>
+
+</html>

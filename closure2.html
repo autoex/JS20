@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" id="button" value="+1" />
+    <div></div>
+    <script>
+        let plusOneButton = document.querySelector('input');
+        let out = document.querySelector('div');
+
+        function plusOne() {
+            let a = 0;
+            return function () {
+                a = a + 1;
+                return a;
+
+            }
+        }
+        let b = plusOne();
+        //console.log(b())
+        plusOneButton.onclick = function () { console.log(b()); }
+
+
+
+    </script>
+</body>
+
+</html>

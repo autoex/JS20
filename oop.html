@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        .error-box {
+            padding: 2px;
+            margin: 2px;
+            background-color: orangered;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="test"></div>
+    <script>
+        function alertFunc(textOfAlert, cssClass) {
+
+            //let textOfAlert = 'Error';
+            let errorBoxCode = `<div class="${cssClass}">${textOfAlert}</div>`;
+            let testBox = document.querySelector('.test');
+
+            testBox.innerHTML += errorBoxCode;
+
+        }
+        alertFunc('Hello', 'error-box');
+        alertFunc('Bro', 'error-box');
+
+
+
+        class Alert {
+            constructor(a, c, d) {
+                this.message = a;
+                this.cssClass = c;
+                this.out = d;
+            }
+            showAlert() {
+
+                document.querySelector(this.out).innerHTML += `<div class="${this.cssClass}">${this.message}</div>`
+            }
+        }
+
+        class Alert2 extends Alert {
+            constructor(a, c, d, icon) {
+                super(a, c, d);
+                this.icon = icon;
+
+            }
+            showIconAlert() {
+
+                document.querySelector(this.out).innerHTML += `<div class="${this.cssClass}"><i class="material-icons">
+        ${this.icon}
+    </i> ${this.message}</div>`
+            }
+
+
+        }
+
+        let m = new Alert('Hello Class', 'error-box', '.test');
+        let m2 = new Alert2('Hello Class2', 'error-box', '.test', 'account_balance');
+        let m3 = new Alert2('Hello Class3', 'error-box', '.test', 'accessible');
+
+        console.log(m);
+        console.log(m2);
+        m.showAlert();
+        m2.showIconAlert();
+        m3.showIconAlert();
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/class_practice_js.js"></script>
+</head>
+
+<body>
+    <div class="out"></div>
+    <script>
+
+
+
+        let goods = new Goods('Product 1', 200);
+        console.log(goods);
+
+
+        class Goods2 extends Goods {
+            constructor(name, amount, image, count) {
+                super(name, amount);
+                this.image = image;
+                this.count = count;
+
+            }
+            draw() {
+                document.querySelector('.out').innerHTML = `<p>${this.image}</p><p><strong>Name: <strong>${this.name}<p><p><strong>Price: </strong>${this.count}</p>`
+            }
+
+        }
+
+        let goods2 = new Goods2('Product 2', 455, 'Img src here', 12);
+        goods2.draw();
+
+        console.log(goods2)
+
+    </script>
+</body>
+
+</html>

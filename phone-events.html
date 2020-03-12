@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .div_0 {
+            border: solid 1px red;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div_0 div-1">Click</div>
+    <div class="out-1"></div>
+    <hr>
+    <div class="div_0 div-2">DblClick</div>
+    <div class="out-2"></div>
+    <hr>
+    <div class="div_0 div-3">MouseMove</div>
+    <div class="out-3"></div>
+    <hr>
+
+    <script>
+        let div1 = document.querySelector('.div-1');
+        let out1 = document.querySelector('.out-1');
+        let a1 = 0;
+        div1.addEventListener('click', counterFunc);
+        function counterFunc(e) {
+            a1++;
+            out1.innerHTML = a1;
+
+        }
+        let div2 = document.querySelector('.div-2');
+        let out2 = document.querySelector('.out-2');
+        let a2 = 0;
+        div2.addEventListener('dblclick', counterFunc2);
+        function counterFunc2(e) {
+            a2++;
+            out2.innerHTML = a2;
+
+        }
+        let div3 = document.querySelector('.div-3');
+        let out3 = document.querySelector('.out-3');
+        let a3 = 0;
+        div3.addEventListener('mousemove', counterFunc3);
+        function counterFunc3(e) {
+            a3++;
+            out3.innerHTML = a3;
+
+        }
+    </script>
+</body>
+
+</html>

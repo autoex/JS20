@@ -10,20 +10,48 @@
 
 <body>
     <div>
-        <input type="text" name="" id="" value="">
+        <input type="text" name="" id="" value="" class="i-1">
+        <div class="out-1"></div>
+        <hr>
+        <input type="text" name="" id="" value="" class="i-2">
+        <div class="out-2"></div>
+        <hr>
+        <input type="text" name="" id="" value="" class="i-3">
+        <div class="out-3"></div>
+        <hr>
     </div>
     <script>
 
-        document.querySelector('input').onkeypress = function (event) {
-            const a = {
-                q: 'w',
-                w: 'e'
-            }
-            document.querySelector('input').value += a[event.key];
+        let i1 = document.querySelector('.i-1');
+        let out1 = document.querySelector('.out-1');
+        i1.addEventListener('keypress', t1)
+        function t1(e) {
+            return out1.innerHTML += e.key;
 
-            return false;
 
         }
+        let i2 = document.querySelector('.i-2');
+        let out2 = document.querySelector('.out-2');
+        i2.addEventListener('keypress', t2)
+        function t2(e) {
+            return out2.innerHTML += e.charCode;
+
+
+        }
+        let i3 = document.querySelector('.i-3');
+        let out3 = document.querySelector('.out-3');
+        i3.addEventListener('keypress', t3)
+        function t3(e) {
+           if(e.charCode>47 && e.charCode<58) {
+               out3.innerHTML = 'True'
+           }
+           else {
+               out3.innerHTML = 'False'
+           }
+
+
+        }
+
 
 
 

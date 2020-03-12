@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button class="b-1">B-1</button>
+    <hr>
+    <button class="b-2">B-2</button>
+    <hr>
+    <button class="b-3">B-3</button>
+    <script>
+        let b1 = document.querySelector('.b-1');
+        function t1() {
+            localStorage.setItem('5', 11);
+        }
+        b1.addEventListener('click', t1);
+
+        let b2 = document.querySelector('.b-2'),
+            a2 = [7, 6, 5];
+        function t2() {
+            localStorage.setItem('a2', JSON.stringify(a2));
+        }
+        b2.addEventListener('click', t2);
+
+
+        let b3 = document.querySelector('.b-3');
+        function t3() {
+            let out3 = document.createElement('div');
+            let b = localStorage.getItem('a2');
+            b = JSON.parse(b);
+            document.body.append(out3);
+            out3.classList.add('out-3');
+            console.log(typeof b);
+            for (let i = 0; i < b.length; i++) {
+                out3.innerHTML += i + ': ' + b[i] + '<br>';
+
+            }
+
+            out3.innerHTML += '<hr>'
+
+            let c = b.map(function (item, index) {
+                out3.innerHTML += index + ': ' + item + '<br>';
+            })
+        }
+        b3.addEventListener('click', t3);
+    </script>
+</body>
+
+</html>
